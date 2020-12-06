@@ -86,7 +86,7 @@ void eval(gramTree *head,int leavel) {
                 cout << head->line;
             }
             for(int i=0;i<leavel;++i) {
-                cout << ". ";
+                cout << "--";
             }
             cout << head->name;
 
