@@ -95,8 +95,6 @@ gramTree *create_tree(string name, int num, ...)
   }
   return head;
 }
-
-<<<<<<< HEAD
 void eval(gramTree *head, int leavel)
 {
   if (head != NULL)
@@ -113,19 +111,6 @@ void eval(gramTree *head, int leavel)
         cout << "--";
       }
       cout << head->name;
-=======
-void eval(gramTree *head,int leavel) {
-    if(head!=NULL) {
-        string Name = head->name;
-        if(head->line!=-1) {
-            if(head->name != "Program") {
-                cout << head->line;
-            }
-            for(int i=0;i<leavel;++i) {
-                cout << "--";
-            }
-            cout << head->name;
->>>>>>> c66142e49ac0f646497adeb7ba441dbbba2d7c2f
 
       if (head->name == "IDENTIFIER" || head->name == "BOOL" || head->name == "INT" ||
           head->name == "CHAR" || head->name == "DOUBLE")
@@ -172,14 +157,7 @@ char *my_substring(char *s, int begin, int end)
   result[i - begin] = 0;
   return result;
 }
-
-<<<<<<< HEAD
 string getValue(struct gramTree *haed)
 {
   return NULL;
 }
-=======
-string getValue(struct gramTree *haed){
-    return NULL;
-}
->>>>>>> c66142e49ac0f646497adeb7ba441dbbba2d7c2f

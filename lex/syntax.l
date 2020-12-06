@@ -152,10 +152,8 @@ void writeout(int c){
 	int* valuePtr;
   switch(c){
 	case LSPACE: fprintf(yyout, "LSPACE, \"%s\"\n", yytext);
-	globalPtr =globalPtr->addChild();
 	break;
     case RSPACE: fprintf(yyout, "LSPACE, \"%s\"\n", yytext);
-	globalPtr =globalPtr->deleteSelf();
 	break;
   	case ERRORCHAR: fprintf(yyout, "ERRORCHAR, \"%s\"\n", yytext);break;
     case MAIN: fprintf(yyout, "MAIN, \"%s\"\n", yytext);break;
