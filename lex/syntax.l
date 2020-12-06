@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include "../source/StaticFlags.h"
 using namespace std;
-#include "../source/TableNode.h"
-auto* globalPtr = new TableNode();
 // Old Chen
 enum {
     USELESSSSSS,
@@ -172,11 +170,7 @@ void writeout(int c){
     break;
     case NUMBER: fprintf(yyout, "NUM, \"%s\", %s\n", yytext, yytext);break;
     case ID:
-	valuePtr = globalPtr->addChar(string(yytext));
-    if(valuePtr == nullptr){
-        valuePtr = globalPtr->isHave(string(yytext));
-    }
-    fprintf(yyout, "ID, \"%s\", %ld\n", yytext, (long int)valuePtr);
+      fprintf(yyout, "ID, \"%s\"\n", yytext);
 	break;
     case NEWLINE: fprintf(yyout, "\n");break;
     case VOID : fprintf(yyout, "VOID,\"%s\"\n", yytext);break;
