@@ -1,0 +1,6 @@
+flex compiler.l
+bison -vdty compiler.y
+g++ -std=gnu++11 -o compiler tree.cpp parser.cpp innerCode.cpp tools.cpp codeOptimize.cpp lex.yy.c y.tab.c
+compiler.exe test/test.c
+python objectcode.py
+进入网站https://shawnzhong.github.io/JsSpim/导入result.asm文件并运行

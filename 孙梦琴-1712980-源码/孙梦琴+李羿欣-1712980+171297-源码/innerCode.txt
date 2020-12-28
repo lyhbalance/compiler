@@ -1,0 +1,88 @@
+temp0 := #100
+temp2 := #4
+temp1 := temp2 * temp0
+DEC array0 temp1
+FUNCTION sort :
+PARAM var0
+PARAM var1
+temp3 := #0
+var2 := temp3
+LABEL label0 :
+IF var2 < var1 GOTO label1
+GOTO label2
+LABEL label1 :
+temp7 := #4
+temp6 := var2 * temp7
+temp5 := &array0 + temp6
+IF var0 < *temp5 GOTO label3
+GOTO label4
+LABEL label3 :
+var3 := var1
+LABEL label6 :
+IF var3 > var2 GOTO label7
+GOTO label8
+LABEL label7 :
+temp12 := #4
+temp11 := var3 * temp12
+temp10 := &array0 + temp11
+temp13 := #1
+temp14 := var3 - temp13
+temp17 := #4
+temp16 := temp14 * temp17
+temp15 := &array0 + temp16
+*temp10 := *temp15
+temp19 := #1
+var3 := var3 + temp19
+GOTO label6
+LABEL label8 :
+temp22 := #4
+temp21 := var2 * temp22
+temp20 := &array0 + temp21
+*temp20 := var0
+GOTO label5
+LABEL label4 :
+temp25 := #4
+temp24 := var1 * temp25
+temp23 := &array0 + temp24
+*temp23 := var0
+LABEL label5 :
+temp27 := #1
+var2 := var2 + temp27
+GOTO label0
+LABEL label2 :
+RETURN
+FUNCTION main :
+temp28 := CALL read
+var4 := temp28
+temp29 := #0
+var5 := temp29
+LABEL label9 :
+IF var5 < var4 GOTO label10
+GOTO label11
+LABEL label10 :
+temp31 := CALL read
+var6 := temp31
+ARG var5
+ARG var6
+CALL sort
+temp33 := #1
+var5 := var5 + temp33
+GOTO label9
+LABEL label11 :
+temp34 := #0
+var7 := temp34
+LABEL label12 :
+IF var7 < var4 GOTO label13
+GOTO label14
+LABEL label13 :
+temp38 := #4
+temp37 := var7 * temp38
+temp36 := &array0 + temp37
+ARG *temp36
+CALL print
+temp40 := #1
+var7 := var7 + temp40
+GOTO label12
+LABEL label14 :
+temp41 := #0
+RETURN temp41
